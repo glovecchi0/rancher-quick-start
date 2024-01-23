@@ -1,0 +1,25 @@
+antiAffinity: preferred
+topologyKey: kubernetes.io/hostname
+
+hostname: rancher.my.org
+
+ingress:
+  enabled: false
+
+service:
+  type: "LoadBalancer"
+  annotations: {}
+
+replicas: 3
+
+resources:
+#  limits:
+#    cpu: "2"
+#    memory: 8Gi
+#  requests:
+#    cpu: "2"
+#    memory: 8Gi
+
+# helm values to use when installing the fleet chart.
+# helm values set here will override all other global values used when installing the fleet chart.
+fleet: ""
