@@ -7,7 +7,7 @@ kubectl-install-cert-manager:
 kubectl-uninstall-cert-manager:
 	kubectl get ns cert-manager -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/cert-manager/finalize" -f - || true
 	kubectl get ns cert-manager -ojson | jq '.metadata.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/cert-manager/finalize" -f - || true
-	kubectl delete -f ../base/cert-manager_v1.13.3 || true
+	kubectl delete -f ../base/cert-manager_v1.13.3
 
 .PHONY: helm-install-rancher-server
 helm-install-rancher-server:
