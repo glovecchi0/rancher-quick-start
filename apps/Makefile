@@ -5,8 +5,9 @@ kubectl-install-cert-manager:
 
 .PHONY: kubectl-uninstall-cert-manager
 kubectl-uninstall-cert-manager:
-	kubectl delete -f ../base/cert-manager_v1.13.3 -n cert-manager
-	kubectl delete namespace cert-manager
+	kubectl get ns cert-manager -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/cert-manager/finalize" -f - || true
+	kubectl get ns cert-manager -ojson | jq '.metadata.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/cert-manager/finalize" -f - || true
+	kubectl delete -f ../base/cert-manager_v1.13.3 || true
 
 .PHONY: helm-install-rancher-server
 helm-install-rancher-server:
@@ -17,7 +18,6 @@ helm-install-rancher-server:
 helm-upgrade-rancher-server:
 	helm upgrade rancher ../base/rancher-server_v2.8.0 --values rancher-server/resources/custom-helm-values.yaml -n cattle-system
 
-.PHONY: helm-uninstall-rancher-server
-helm-uninstall-rancher-server:
-	helm uninstall rancher -n cattle-system
-	kubectl delete namespace cattle-system
+#.PHONY: helm-uninstall-rancher-server
+#helm-uninstall-rancher-server:
+#	helm uninstall rancher --wait -n cattle-system || true

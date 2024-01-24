@@ -32,3 +32,16 @@ sh configure-cert-manager-version.sh -r cert-manager_release
 make kubectl-install-cert-manager
 make helm-install-rancher-server
 ```
+
+## How to update Rancher configurations
+
+```bash
+make helm-upgrade-rancher-server
+```
+
+## How to delete the tools
+
+```bash
+#make helm-uninstall-rancher-server
+make kubectl-uninstall-cert-manager
+```
