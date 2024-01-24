@@ -9,14 +9,13 @@ One-click Rancher deployment to any Kubernetes cluster.
 ├── base/
 │   ├── download-cert-manager-helm-chart.sh
 │   ├── download-rancher-server-helm-chart.sh
-│   ├── cert-manager_v1.13/    # Example
+│   ├── cert-manager_v1.13.3/  # Example -> Not required in case of Public/Private CA
 │   ├── rancher-server_v2.8.0/ # Example
 │   └── README.md
 ├── apps/
 │   ├── configure-cert-manager-version.sh
 │   ├── configure-rancher-server-version.sh
 │   ├── Makefile
-│   ├── cert-manager/ # Not required in case of Public/Private CA
 │   ├── rancher-server/
 │   └── README.md
 └── README.md

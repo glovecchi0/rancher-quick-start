@@ -1,7 +1,7 @@
 .PHONY: kubectl-install-cert-manager
 kubectl-install-cert-manager:
 	kubectl create namespace cert-manager || true
-	kubectl apply -f ../base/cert-manager_v1.13.3 -n cert-manager
+	kubectl apply -f ../base/cert-manager_v1.13.3
 
 .PHONY: kubectl-uninstall-cert-manager
 kubectl-uninstall-cert-manager:
