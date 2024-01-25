@@ -29,19 +29,22 @@ sh configure-cert-manager-version.sh -r cert-manager_release
 #### Rancher Server with self-signed certificates
 
 ```bash
-make kubectl-install-cert-manager
-make helm-install-rancher-server
+make install-cert-manager
+make install-rancher-server
 ```
 
 ## How to update Rancher configurations
 
 ```bash
-make helm-upgrade-rancher-server
+make upgrade-rancher-server
 ```
 
 ## How to delete the tools
 
 ```bash
-#make helm-uninstall-rancher-server
-make kubectl-uninstall-cert-manager
+make uninstall-rancher-server
+make uninstall-cert-manager
 ```
+
+**After launching the Rancher uninstallation command, which is nothing more than a Kubernetes Job that cleans up all the Namespaces and Pods created by Rancher itself, the `kubectl logs` command is executed to follow all the cleaning steps.**
+**You can stop viewing the logs by clicking "control + c" and restart them by relaunching the uninstall command.**

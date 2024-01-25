@@ -14,6 +14,12 @@ sh download-rancher-server-helm-chart.sh -b branch_name
 
 **If you look at the [Rancher repository](https://github.com/rancher/rancher), you will notice that the `branch_name` corresponds to the release of the application itself.**
 
+#### Rancher Cleanup
+
+```bash
+sh download-rancher-cleanup-manifest.sh
+```
+
 #### cert-manager
 
 ```bash
