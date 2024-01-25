@@ -47,4 +47,5 @@ make uninstall-cert-manager
 ```
 
 **After launching the Rancher uninstallation command, which is nothing more than a Kubernetes Job that cleans up all the Namespaces and Pods created by Rancher itself, the `kubectl logs` command is executed to follow all the cleaning steps.**
+
 **You can stop viewing the logs by clicking "control + c" and restart them by relaunching the uninstall command.**
