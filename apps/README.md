@@ -24,6 +24,8 @@ sh configure-rancher-server-version.sh -r rancher_release
 sh configure-cert-manager-version.sh -r cert-manager_release
 ```
 
+**These scripts work perfectly from the macOS terminal; if you use any other Linux distribution, remove `''` from the `sed` command.**
+
 ## How to install the tools
 
 #### Rancher Server with self-signed certificates

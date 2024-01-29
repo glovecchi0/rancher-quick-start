@@ -25,3 +25,5 @@ sh download-rancher-cleanup-manifest.sh
 ```bash
 sh download-cert-manager-helm-chart.sh -r cert-manager_release
 ```
+
+**These scripts work perfectly from the macOS terminal; if you use any other Linux distribution, remove `''` from the `sed` command.**
